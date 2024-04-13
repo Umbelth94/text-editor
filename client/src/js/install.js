@@ -23,9 +23,11 @@ butInstall.addEventListener('click', async () => {
     //Reset the deferred prompt variable, it can only be used once.
     window.deferredPrompt = null;
 
-    
+
     butInstall.classList.toggle('hidden', true);
 });
 
-// TODO: Add an handler for the `appinstalled` event
-window.addEventListener('appinstalled', (event) => {});
+window.addEventListener('appinstalled', (event) => {
+    console.log('App installed!');
+    window.deferredPrompt = null;
+});
